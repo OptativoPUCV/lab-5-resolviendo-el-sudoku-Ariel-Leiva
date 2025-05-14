@@ -132,3 +132,26 @@ sudoku.c:156:32: error: 'Node {aka struct <anonymous>}' has no member named 'nex
                                 ^~
 cc1.exe: all warnings being treated as errors
 5a42147
+Wed, May 14, 2025  9:21:19 AM: 
+ sudoku.c | 49 ++++++++++---------------------------------------
+ 1 file changed, 10 insertions(+), 39 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:127:8: error: passing argument 1 of 'push' from incompatible pointer type [-Werror=incompatible-pointer-types]
+   push(initial, pila);
+        ^~~~~~~
+In file included from test.c:4:0:
+list.h:33:6: note: expected 'Stack * {aka struct List *}' but argument is of type 'Node * {aka struct <anonymous> *}'
+ void push(Stack* s, void* data);
+      ^~~~
+In file included from test.c:5:0:
+sudoku.c:134:10: error: passing argument 1 of 'push' from incompatible pointer type [-Werror=incompatible-pointer-types]
+     push(aux,pila);
+          ^~~
+In file included from test.c:4:0:
+list.h:33:6: note: expected 'Stack * {aka struct List *}' but argument is of type 'Node * {aka struct <anonymous> *}'
+ void push(Stack* s, void* data);
+      ^~~~
+cc1.exe: all warnings being treated as errors
+8cd7862

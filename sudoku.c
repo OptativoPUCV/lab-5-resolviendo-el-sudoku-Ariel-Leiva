@@ -123,48 +123,19 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-      // Crear una pila para los nodos a explorar
-    List* stack = createList();
-    
-    // Agregar el nodo inicial a la pila
-    addNode(stack, initial);
-
-    // Contador de iteraciones
-    *cont = 0;
-
-    // Mientras la pila no esté vacía
-    while (stack->head != NULL) {
-        (*cont)++;  // Incrementar el contador de iteraciones
-
-        // Sacar el primer nodo de la pila (nodo actual)
-        Node* current = stack->head;
-        stack->head = stack->head->next;  // Eliminar el nodo de la pila
-
-        // Verificar si el nodo es una solución final (Sudoku completo)
-        if (is_final(current)) {
-            // Si es una solución, retornar el nodo
-            return current;
-        }
-
-        // Obtener los nodos adyacentes al nodo actual
-        List* adj_nodes = get_adj_nodes(current);
-
-        // Agregar los nodos adyacentes a la pila
-        Node* adj_node = adj_nodes->head;
-        while (adj_node != NULL) {
-            addNode(stack, adj_node);  // Agregar cada nodo adyacente a la pila
-            adj_node = adj_node->next;
-        }
-
-        // Liberar la memoria del nodo actual
-        free(current);
-
-        // Liberar la memoria de la lista de nodos adyacentes (no los nodos en sí)
-        free(adj_nodes);
-    }
-
-    // Si no se encontró una solución, retornar NULL
+  Stack *pila = createStack();
+  push(initial, pila);
+  (*cont)++;
   
+  List *ady = get_adj_nodes(initial);
+  Node *aux = front(ady);
+
+  while(aux != NULL){
+    push(aux,pila);
+    popFront(ady);
+    ady = front(ady);
+    aux = front(ady);
+  }
   return NULL;
 }
 
