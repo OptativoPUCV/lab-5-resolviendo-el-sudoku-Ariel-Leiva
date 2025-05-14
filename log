@@ -160,3 +160,18 @@ Wed, May 14, 2025  9:21:57 AM:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 15d1a81
+Wed, May 14, 2025  9:26:55 AM: 
+ sudoku.c | 25 ++++++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:156:29: error: passing argument 1 of 'next' from incompatible pointer type [-Werror=incompatible-pointer-types]
+             adj_node = next(adj_node);
+                             ^~~~~~~~
+In file included from test.c:4:0:
+list.h:17:7: note: expected 'List * {aka struct List *}' but argument is of type 'Node * {aka struct <anonymous> *}'
+ void* next(List* list);
+       ^~~~
+cc1.exe: all warnings being treated as errors
+9ab2400
