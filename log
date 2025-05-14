@@ -175,3 +175,14 @@ list.h:17:7: note: expected 'List * {aka struct List *}' but argument is of type
        ^~~~
 cc1.exe: all warnings being treated as errors
 9ab2400
+Wed, May 14, 2025  9:31:37 AM: 
+ sudoku.c | 19 +++----------------
+ 1 file changed, 3 insertions(+), 16 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:150:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+4b63284

@@ -123,21 +123,8 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  /*Stack *pila = createStack();
-  push(pila, initial);
-  (*cont)++;
-  
-  List *ady = get_adj_nodes(initial);
-  Node *aux = front(ady);
-
-  while(aux != NULL){
-    push(pila,aux);
-    popFront(ady);
-    ady = front(ady);
-    aux = front(ady);
-  }
-  return NULL;*/
-  Stack* pila = createStack();
+//MODIFICAR
+/*  Stack* pila = createStack();
     push(pila, initial);  
     (*cont)++;  
 
@@ -153,13 +140,13 @@ Node* DFS(Node* initial, int* cont){
 
         while (adj_node != NULL) {
             push(pila, adj_node);
-            adj_node = next(adj_node);
+            adj_node = adj_node;
         }
         free(adj_nodes);  
     }
 
     return NULL; 
-
+*/
 }
 
 
