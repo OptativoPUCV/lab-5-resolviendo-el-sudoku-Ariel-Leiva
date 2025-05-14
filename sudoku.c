@@ -144,10 +144,10 @@ Node* DFS(Node* initial, int* cont){
         }
         free(adj_nodes);  
     }
-
+*/
     return NULL; 
 
-}*/
+}
 
 
 
