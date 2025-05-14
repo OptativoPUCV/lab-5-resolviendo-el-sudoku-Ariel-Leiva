@@ -55,15 +55,14 @@ List* get_adj_nodes(Node* n){
 
     for(int f = 0; f < 9; f++) {
       for(int c = 0; c < 9; c++) {
-        if(n->sudo[f][c] == 0) {// Si encontramos una celda vacía
-          // Probar todos los números posibles del 1 al 9
+        if(n->sudo[f][c] == 0) {
           for(int num = 1; num <= 9; num++) {
             Node* new_node = copy(n);
             new_node->sudo[f][c] = num;
             pushBack(list, new_node); 
           }
             return list; 
-          }
+        }
       }
     }
     return list;
