@@ -124,14 +124,14 @@ int is_final(Node* n){
 
 Node* DFS(Node* initial, int* cont){
   Stack *pila = createStack();
-  push(initial, pila);
+  push(pila, initial);
   (*cont)++;
   
   List *ady = get_adj_nodes(initial);
   Node *aux = front(ady);
 
   while(aux != NULL){
-    push(aux,pila);
+    push(pila,aux);
     popFront(ady);
     ady = front(ady);
     aux = front(ady);
