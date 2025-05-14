@@ -70,13 +70,11 @@ int is_valid(Node* n){
         int arreglo[10] = {}; 
 
         for(p=0;p<9;p++){
-          int i=3*(k/3) + (p/3) ;
-          int j=3*(k%3) + (p%3) ;
-          int numero = n->sudo[i][j];
-          if(arreglo[numero] == 1)
+          int f=3*(k/3) + (p/3) ;
+          int c=3*(k%3) + (p%3) ;
+          if(n->sudo[i][j] == n->sudo[f][c])
             return 0;
-          else arreglo[numero] = 1;
-        } 
+        }
       }
     }    
     return 1;

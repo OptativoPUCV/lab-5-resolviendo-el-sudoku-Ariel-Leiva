@@ -56,3 +56,14 @@ Wed, May 14, 2025  8:41:32 AM:
  tests:  2|4
 total_score: 15/70
 843355f
+Wed, May 14, 2025  8:44:39 AM: 
+ sudoku.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'is_valid':
+sudoku.c:70:13: error: unused variable 'arreglo' [-Werror=unused-variable]
+         int arreglo[10] = {};
+             ^~~~~~~
+cc1.exe: all warnings being treated as errors
+5f8cf16
