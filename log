@@ -115,3 +115,20 @@ Wed, May 14, 2025  9:03:45 AM:
  tests:  7|1
 total_score: 55/70
 0277f59
+Wed, May 14, 2025  9:05:34 AM: 
+ sudoku.c | 42 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+Compilation failed
+In file included from test.c:5:0:
+sudoku.c: In function 'DFS':
+sudoku.c:130:5: error: implicit declaration of function 'addNode' [-Werror=implicit-function-declaration]
+     addNode(stack, initial);
+     ^~~~~~~
+sudoku.c:136:17: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+     while (stack->head != NULL) {
+                 ^~
+sudoku.c:156:32: error: 'Node {aka struct <anonymous>}' has no member named 'next'
+             adj_node = adj_node->next;
+                                ^~
+cc1.exe: all warnings being treated as errors
+5a42147
