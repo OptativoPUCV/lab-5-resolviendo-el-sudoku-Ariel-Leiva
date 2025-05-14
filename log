@@ -79,3 +79,9 @@ Wed, May 14, 2025  8:45:44 AM:
  tests:  2|4
 total_score: 15/70
 a50600b
+Wed, May 14, 2025  8:47:40 AM: 
+ sudoku.c | 42 ++++++++++++++++++++++++++++--------------
+ 1 file changed, 28 insertions(+), 14 deletions(-)
+ tests:  5|3
+total_score: 35/70
+7ecfe58
