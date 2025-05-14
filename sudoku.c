@@ -52,7 +52,32 @@ int is_valid(Node* n){
             return 0;
           else arreglo[numero] = 1;
       } 
-    } 
+    }
+
+    for(int f = 0; f < 9; f++){
+      int arreglo[10] = {};
+      for(int c = 0; c < 9; c++){
+          int numero = n->sudo[c][f];
+          if(arreglo[numero] == 1)
+            return 0;
+          else arreglo[numero] = 1;
+      }
+    }
+
+    for(int i = 0; i < 9; i+=3){
+      for(int j = 0; j < 9; j+=3){
+        int k=4,p;
+        int arreglo[10] = {}; 
+        
+        for(p=0;p<9;p++){
+          int i=3*(k/3) + (p/3) ;
+          int j=3*(k%3) + (p%3) ;
+          int numero = n->sudo[i][j];
+          if(arreglo[numero] == 1)
+            return 0;
+          else arreglo[numero] = 1;
+      } 
+    }  
     return 1;
 }
 
