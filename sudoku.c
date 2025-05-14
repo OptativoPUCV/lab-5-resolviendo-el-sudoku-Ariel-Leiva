@@ -66,9 +66,7 @@ int is_valid(Node* n){
 
     for(int i = 0; i < 9; i+=3){
       for(int j = 0; j < 9; j+=3){
-        int k=4,p;
-        int arreglo[10] = {}; 
-
+        int k=4,p; 
         for(p=0;p<9;p++){
           int f=3*(k/3) + (p/3) ;
           int c=3*(k%3) + (p%3) ;
