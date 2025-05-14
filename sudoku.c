@@ -45,7 +45,7 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
     for(int f = 0; f < 9; f++){
-      int arreglo[10] = {};
+      int arreglo[10] = {0};
       for(int c = 0; c < 9; c++){
           int numero = n->sudo[f][c];
           if(arreglo[numero] == 1)
@@ -55,7 +55,7 @@ int is_valid(Node* n){
     }
 
     for(int f = 0; f < 9; f++){
-      int arreglo[10] = {};
+      int arreglo[10] = {0};
       for(int c = 0; c < 9; c++){
           int numero = n->sudo[c][f];
           if(arreglo[numero] == 1)
