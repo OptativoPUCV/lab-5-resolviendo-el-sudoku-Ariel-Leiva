@@ -146,8 +146,8 @@ Node* DFS(Node* initial, int* cont){
     }
 
     return NULL; 
-*/
-}
+
+}*/
 
 
 
