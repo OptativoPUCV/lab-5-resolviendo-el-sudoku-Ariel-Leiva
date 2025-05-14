@@ -43,53 +43,53 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){ 
-    for(int f = 0; f < 9; f++) {
-        int arreglo[10] = {0};  
-        for(int c = 0; c < 9; c++) {
-            int numero = n->sudo[f][c];
-            if (numero != 0) { 
-                if (arreglo[numero] == 1)
-                    return 0;  
-                else
-                    arreglo[numero] = 1;
-            }
+int is_valid(Node* n){
+  for(int f = 0; f < 9; f++) {
+    int arreglo[10] = {0};  
+    for(int c = 0; c < 9; c++) {
+      int numero = n->sudo[f][c];
+      if (numero != 0) { 
+        if (arreglo[numero] == 1)
+          return 0;  
+        else
+            arreglo[numero] = 1;
+      }
+    }
+  }
+
+  // Comprobamos columnas
+  for(int f = 0; f < 9; f++) {
+    int arreglo[10] = {0}; 
+    for(int c = 0; c < 9; c++) {
+      int numero = n->sudo[c][f];
+      if (numero != 0) { 
+        if (arreglo[numero] == 1)
+          return 0;
+        else
+          arreglo[numero] = 1;
         }
     }
+  }
 
-    // Comprobamos columnas
-    for(int f = 0; f < 9; f++) {
-        int arreglo[10] = {0};  // Inicializamos el arreglo a cero
-        for(int c = 0; c < 9; c++) {
-            int numero = n->sudo[c][f];
-            if (numero != 0) { // Solo verificamos si el número no es 0
-                if (arreglo[numero] == 1)
-                    return 0;  // Si ya apareció, es inválido
-                else
-                    arreglo[numero] = 1;
-            }
+  // Comprobamos subcuadros 3x3
+  for(int i = 0; i < 9; i += 3) {
+    for(int j = 0; j < 9; j += 3) {
+      int arreglo[10] = {0};  
+      for(int p = 0; p < 9; p++) {
+        int f = i + p / 3; 
+        int c = j + p % 3;  
+        int numero = n->sudo[f][c];
+        if (numero != 0) { 
+          if (arreglo[numero] == 1)
+            return 0; 
+          else
+            arreglo[numero] = 1;
         }
+      }
     }
+  }
 
-    // Comprobamos subcuadros 3x3
-    for(int i = 0; i < 9; i += 3) {
-        for(int j = 0; j < 9; j += 3) {
-            int arreglo[10] = {0};  // Inicializamos el arreglo a cero
-            for(int p = 0; p < 9; p++) {
-                int f = i + p / 3;  // Fila dentro del subcuadro 3x3
-                int c = j + p % 3;  // Columna dentro del subcuadro 3x3
-                int numero = n->sudo[f][c];
-                if (numero != 0) { // Solo verificamos si el número no es 0
-                    if (arreglo[numero] == 1)
-                        return 0;  // Si ya apareció, es inválido
-                    else
-                        arreglo[numero] = 1;
-                }
-            }
-        }
-    }
-
-    return 1;  // Si pasa todas las validaciones, es válido
+  return 1;  
 }
 
 
