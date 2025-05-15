@@ -215,3 +215,12 @@ Wed, May 14, 2025  9:32:06 AM:
  tests:  7|1
 total_score: 55/70
 a3c015c
+Wed, May 14, 2025 11:27:38 PM: 
+ sudoku.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+Compilation failed
+test.c:7:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+622b448

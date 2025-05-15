@@ -123,6 +123,31 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+    if (initial == NULL || cont == NULL) return NULL;
+
+    Stack* S = createStack();
+    push(S, initial);
+    *cont = 0;
+
+    while (!is_empty(S)) {
+        Node* current = (Node*) top(S);
+        pop(S);
+        (*cont)++;
+
+        if (is_final(current)) {
+            return current;
+        }
+
+        List* adj = get_adj_nodes(current);
+        void* ptr = first(adj);
+        while (ptr != NULL) {
+            push(S, ptr);
+            ptr = next(adj);
+        }
+
+        free(current); // liberamos el nodo actual ya que no es solución
+    }
+
 //MODIFICAR
 /*  Stack* pila = createStack();
     push(pila, initial);  
