@@ -234,3 +234,18 @@ Wed, May 14, 2025 11:35:21 PM:
  tests:  10|0
 total_score: 70/70
 908b100
+Wed, May 14, 2025 11:37:40 PM: 
+ sudoku.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+Compilation failed
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+test.c:245:5: error: redefinition of 'main'
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:5:
+sudoku.c:154:5: note: previous definition of 'main' with type 'int(int,  char **)'
+  154 | int main( int argc, char *argv[] ){
+      |     ^~~~
+9323b46
