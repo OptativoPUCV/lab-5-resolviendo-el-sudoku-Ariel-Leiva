@@ -125,19 +125,20 @@ int is_final(Node* n){
 Node* DFS(Node* initial, int* cont){
     if (initial == NULL || cont == NULL) return NULL;
 
-    Stack* S = createStack();
+    Stack* S = createStack(); //creamos la pila, ingresamos el nodo "initial"
     push(S, initial);
     *cont = 0;
 
     while (!is_empty(S)) {
-        Node* current = (Node*) top(S);
+        Node* current = (Node*) top(S); //metemos el top en una variable
         pop(S);
         (*cont)++;
 
-        if (is_final(current)) {
+        if (is_final(current)) { //preguntamos si el nodo es solucion y lo retornamos en el caso de que lo sea
             return current;
         }
-
+        
+        //En caso de que no sea solucion, probamos con los adj del nodo actual
         List* adj = get_adj_nodes(current);
         void* ptr = first(adj);
         while (ptr != NULL) {
